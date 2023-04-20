@@ -1,3 +1,6 @@
+-- AUTHOR: https://github.com/frxedlxver/
+-- REPO: https://github.com/frxedlxver/aseprite-opacity-animation-tool
+
 local OpacityDialog = {
     title = "Animate Opacity",
     dialog = nil,

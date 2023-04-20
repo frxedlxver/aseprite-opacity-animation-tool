@@ -21,3 +21,5 @@ Generate fade animations in Aseprite using keyframes (via cel opacity).
 ### Notes:
 	* animation direction can be changed by swapping inital and target opacity
 	* limits on duration and opacity can be changed by editing respective slider.max values in OpacityDialog:Show()
+	* if you receive a nil value error, ensure that there is an existing cel for the targeted layer(s) at the selected start frame.
+		- if you run into any bugs, please let me know!

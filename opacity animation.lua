@@ -7,8 +7,8 @@ local OpacityDialog = {
     bounds = nil,
     layers = {};
     layersToAnimate = {};
-    animationDuration = nil,
-    startFrame = nil,
+    animationDuration = 5,
+    startFrame = 1,
     initOpacity = 0,
     endOpacity = 255,
     mode = "linear"
@@ -96,7 +96,7 @@ function OpacityDialog:Show()
                 if isSelected then
                     for i = 1, #self.layersToAnimate do
                         if self.layersToAnimate[i] == layer then
-                            table.remove(self.layersToAnimate, i)
+                            table.remove(self.layersToAnimate, layer)
                             break
                         end
                     end
@@ -119,7 +119,7 @@ function OpacityDialog:Show()
         label = "Animation Duration: ",
         value = self.animationDuration,
         min = 5,
-        max = 200,
+        max = 100,
         onrelease = function()
             self:Refresh()
         end,
@@ -158,7 +158,7 @@ function OpacityDialog:Show()
         end
     }
 
-    -- start frame Slider
+    -- final opacity slider
     self.dialog:slider {
         id = "finalOpacity",
         label = "To opacity:",
@@ -169,7 +169,7 @@ function OpacityDialog:Show()
             self:Refresh()
         end,
         onchange = function()
-            self.finalOpacity = self.dialog.data["initOpacity"];
+            self.finalOpacity = self.dialog.data["finalOpacity"];
         end
     }
 
